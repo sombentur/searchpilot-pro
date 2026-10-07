@@ -16,7 +16,7 @@ installs it on every site; new sites are set up automatically).
 ## 1. Install
 
 1. In WordPress go to **Plugins → Add Plugin → Upload Plugin**.
-2. Choose `searchpilot-pro-1.0.0.zip` and click **Install Now**, then **Activate**.
+2. Choose the `searchpilot-pro-<version>.zip` you downloaded and click **Install Now**, then **Activate**.
 3. You are taken to the **Setup Wizard** (you can reopen it any time from the
    notice on the SearchPilot screens or the *Run setup* link on the Plugins page).
 

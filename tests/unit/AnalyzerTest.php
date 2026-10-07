@@ -367,7 +367,7 @@ class AnalyzerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertStringContainsString( 'site name', Analyzer::title_length_status( 'Contact', $page )['recommendation'] );
 		$this->assertSame( 'fail', Analyzer::title_length_status( 'Contact', Analyzer::post_type_rule( 'post', array() ) )['status'] );
 		// The suggested "{title} – {site}" must verify on utility pages (both scripts); bare titles keep warning.
-		foreach ( array( 'Contact – The Voice of Human', 'ಸಂಪರ್ಕ – ದಿ ವಾಯ್ಸ್ ಆಫ್ ಕನ್ನಡಿಗ' ) as $title ) {
+		foreach ( array( 'Contact – The Daily Example', 'ಸಂಪರ್ಕ – ಕನ್ನಡ ದಿನಪತ್ರಿಕೆ' ) as $title ) {
 			$status = Analyzer::title_length_status( $title, $page );
 			$this->assertSame( 'pass', $status['status'], $title . ': ' . $status['message'] );
 			$this->assertSame( 'ok', $status['direction'] );

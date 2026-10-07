@@ -1,4 +1,4 @@
-# Copyright (C) 2026 SearchPilot Pro
+# Copyright (C) 2026 sombentur
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""

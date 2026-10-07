@@ -5,9 +5,10 @@
  * Version:           1.1.9
  * Requires at least: 6.2
  * Requires PHP:      7.4
- * Author:            Newsroom Engine
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Author:            sombentur
+ * Author URI:        https://github.com/sombentur
+ * License:           MIT
+ * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       searchpilot-pro
  * Domain Path:       /languages
  * Network:           false

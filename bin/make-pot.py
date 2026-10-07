@@ -70,8 +70,8 @@ def main():
                 scan(os.path.join(base, name), rel, entries)
     now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M+0000')
     out = [
-        '# Copyright (C) %d SearchPilot Pro' % datetime.datetime.now(datetime.timezone.utc).year,
-        '# This file is distributed under the GPL-2.0-or-later.',
+        '# Copyright (C) %d sombentur' % datetime.datetime.now(datetime.timezone.utc).year,
+        '# This file is distributed under the MIT license.',
         'msgid ""',
         'msgstr ""',
         '"Project-Id-Version: SearchPilot Pro 1.1.9\\n"',

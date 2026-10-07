@@ -1,12 +1,12 @@
 === SearchPilot Pro ===
-Contributors: newsroomengine
+Contributors: sombentur
 Tags: seo, indexing, search console, sitemap, schema
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.1.9
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: MIT
+License URI: https://opensource.org/licenses/MIT
 
 Autonomous technical SEO and indexing: official Google, Bing and IndexNow integrations, XML sitemaps, schema, internal links, audits and Search Console insights.
 

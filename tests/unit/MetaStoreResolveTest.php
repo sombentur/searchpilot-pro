@@ -69,7 +69,7 @@ namespace SearchPilot\Tests {
 
 		protected function setUp(): void {
 			$GLOBALS['spp_test_options'] = array(
-				'blogname'                 => 'The Voice of Human',
+				'blogname'                 => 'The Daily Example',
 				'blogdescription'          => 'News',
 				'rank-math-options-titles' => array( 'title_separator' => '-' ),
 			);
@@ -79,16 +79,16 @@ namespace SearchPilot\Tests {
 			$meta = $this->store();
 			$post = $this->post( array( 'post_title' => 'Can Poverty Cost You Your Children?' ) );
 			$this->assertSame( 'Can Poverty Cost You Your Children?', $meta->rank_math_resolve( '%title%', $post ), 'Template %title%: no invented site suffix.' );
-			$this->assertSame( 'Can Poverty Cost You Your Children? - The Voice of Human', $meta->rank_math_resolve( '%title% %sep% %sitename%', $post ) );
+			$this->assertSame( 'Can Poverty Cost You Your Children? - The Daily Example', $meta->rank_math_resolve( '%title% %sep% %sitename%', $post ) );
 			$GLOBALS['spp_test_options']['rank-math-options-titles']['title_separator'] = '&ndash;';
-			$this->assertSame( 'Can Poverty Cost You Your Children? – The Voice of Human', MetaStore::plain( $meta->rank_math_resolve( '%title% %sep% %sitename%', $post ) ) );
+			$this->assertSame( 'Can Poverty Cost You Your Children? – The Daily Example', MetaStore::plain( $meta->rank_math_resolve( '%title% %sep% %sitename%', $post ) ) );
 		}
 
 		public function test_rank_math_tidies_separators_like_its_replacer() {
 			$meta = $this->store();
 			$post = $this->post( array( 'post_title' => 'ಬೆಂಗಳೂರು ಮಳೆ' ) );
 			$this->assertSame( 'ಬೆಂಗಳೂರು ಮಳೆ', $meta->rank_math_resolve( '%title% %sep%', $post ), 'A trailing " %sep%" is dropped.' );
-			$this->assertSame( 'ಬೆಂಗಳೂರು ಮಳೆ - The Voice of Human', $meta->rank_math_resolve( '%title% %sep% %page% %sep% %sitename%', $post ), 'Empty variables do not leave doubled separators.' );
+			$this->assertSame( 'ಬೆಂಗಳೂರು ಮಳೆ - The Daily Example', $meta->rank_math_resolve( '%title% %sep% %page% %sep% %sitename%', $post ), 'Empty variables do not leave doubled separators.' );
 			$this->assertSame( 'ಬೆಂಗಳೂರು ಮಳೆ', $meta->rank_math_resolve( '%seo_title%', $post ), '%seo_title% in option templates means %title%.' );
 			$this->assertSame( 'ಬೆಂಗಳೂರು ಮಳೆ', $meta->rank_math_resolve( '%title% %unknown_var%', $post ) );
 		}

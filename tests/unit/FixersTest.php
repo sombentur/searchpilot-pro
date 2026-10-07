@@ -144,11 +144,11 @@ class FixersTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function test_strip_site_suffix() {
-		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'Karnataka budget highlights – The Voice of Human', 'The Voice of Human' ) );
-		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'Karnataka budget highlights - the voice of human', 'The Voice of Human' ) );
-		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'The Voice of Human | Karnataka budget highlights', 'The Voice of Human' ) );
-		$this->assertSame( 'No site name here', TitleFixer::strip_site_suffix( 'No site name here', 'The Voice of Human' ) );
-		$this->assertSame( 'ಮೈಸೂರು ದಸರಾ', TitleFixer::strip_site_suffix( 'ಮೈಸೂರು ದಸರಾ - ದಿ ವಾಯ್ಸ್ ಆಫ್ ಕನ್ನಡಿಗ', 'ದಿ ವಾಯ್ಸ್ ಆಫ್ ಕನ್ನಡಿಗ' ) );
+		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'Karnataka budget highlights – The Daily Example', 'The Daily Example' ) );
+		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'Karnataka budget highlights - the daily example', 'The Daily Example' ) );
+		$this->assertSame( 'Karnataka budget highlights', TitleFixer::strip_site_suffix( 'The Daily Example | Karnataka budget highlights', 'The Daily Example' ) );
+		$this->assertSame( 'No site name here', TitleFixer::strip_site_suffix( 'No site name here', 'The Daily Example' ) );
+		$this->assertSame( 'ಮೈಸೂರು ದಸರಾ', TitleFixer::strip_site_suffix( 'ಮೈಸೂರು ದಸರಾ - ಕನ್ನಡ ದಿನಪತ್ರಿಕೆ', 'ಕನ್ನಡ ದಿನಪತ್ರಿಕೆ' ) );
 	}
 
 	public function test_trim_to_fit_cuts_on_word_boundary() {
@@ -207,9 +207,9 @@ class FixersTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function test_candidate_kinds_english() {
-		$site = 'The Voice of Human';
+		$site = 'The Daily Example';
 		// 1. Site-name suffix removed: a natural phrase.
-		$title = 'Karnataka budget highlights for farmers and students – The Voice of Human';
+		$title = 'Karnataka budget highlights for farmers and students – The Daily Example';
 		$c     = TitleFixer::candidates( $title, $site, self::between( 20, 55 ) );
 		$this->assertSame( 'site', $c[0]['kind'] );
 		$this->assertSame( 'Karnataka budget highlights for farmers and students', $c[0]['text'] );
@@ -232,7 +232,7 @@ class FixersTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function test_candidate_kinds_kannada() {
-		$site = 'ದಿ ವಾಯ್ಸ್ ಆಫ್ ಕನ್ನಡಿಗ';
+		$site = 'ಕನ್ನಡ ದಿನಪತ್ರಿಕೆ';
 		$core = 'ಬೆಂಗಳೂರಿನಲ್ಲಿ ಭಾರಿ ಮಳೆ ಶಾಲೆಗಳಿಗೆ ರಜೆ ಘೋಷಣೆ';
 		$c    = TitleFixer::candidates( $core . ' – ' . $site, $site, self::between( 5, Text::length( $core ) ) );
 		$this->assertSame( 'site', $c[0]['kind'] );
@@ -277,7 +277,7 @@ class FixersTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function test_site_name_and_separators() {
-		$this->assertSame( 'Contact – The Voice of Human', TitleFixer::with_site_name( ' Contact ', '–', 'The Voice of Human' ) );
+		$this->assertSame( 'Contact – The Daily Example', TitleFixer::with_site_name( ' Contact ', '–', 'The Daily Example' ) );
 		$this->assertSame( '|', TitleFixer::yoast_separator( 'sc-pipe' ) );
 		$this->assertSame( '–', TitleFixer::yoast_separator( 'sc-ndash' ) );
 		$this->assertSame( '-', TitleFixer::yoast_separator( 'unknown' ) );
