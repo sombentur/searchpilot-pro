@@ -1,0 +1,106 @@
+/*
+ * SearchPilot Pro — front-end styles (breadcrumbs and FAQ block only).
+ * Loaded only on pages that print one of them; colours inherit from the theme.
+ */
+
+.searchpilot-breadcrumbs {
+	font-size: 0.9em;
+	line-height: 1.5;
+}
+
+.searchpilot-breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0 0.4em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.searchpilot-breadcrumbs li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	margin: 0;
+	padding: 0;
+}
+
+.searchpilot-breadcrumbs li::before,
+.searchpilot-breadcrumbs li::marker {
+	content: none;
+}
+
+.searchpilot-breadcrumbs-prefix {
+	margin-right: 0.4em;
+}
+
+.searchpilot-breadcrumbs-sep {
+	opacity: 0.55;
+}
+
+.searchpilot-breadcrumbs-current {
+	opacity: 0.8;
+}
+
+.searchpilot-breadcrumbs-note {
+	font-size: 0.85em;
+	opacity: 0.7;
+}
+
+.searchpilot-faq {
+	margin-block: 1.5em;
+}
+
+.searchpilot-faq-item {
+	border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+.searchpilot-faq-item:first-child {
+	border-top: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+.searchpilot-faq-question {
+	cursor: pointer;
+	font-weight: 600;
+	padding: 0.8em 0;
+}
+
+.searchpilot-faq-question:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+.searchpilot-faq-answer {
+	padding: 0 0 1em;
+}
+
+.searchpilot-faq-answer > :first-child {
+	margin-top: 0;
+}
+
+.searchpilot-faq-answer > :last-child {
+	margin-bottom: 0;
+}
+
+/* Block editor: FAQ editing rows. */
+.searchpilot-faq-edit-item {
+	padding: 12px 0;
+	border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+.searchpilot-faq-edit-item .searchpilot-faq-edit-answer {
+	min-height: 2.5em;
+	padding: 6px 0;
+}
+
+.searchpilot-faq-edit-actions {
+	display: flex;
+	gap: 4px;
+	justify-content: flex-end;
+}
+
+.searchpilot-faq-edit-empty {
+	opacity: 0.7;
+	font-style: italic;
+}
